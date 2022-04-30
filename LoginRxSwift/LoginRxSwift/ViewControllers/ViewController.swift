@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
@@ -19,7 +21,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapLoginButton(_ sender: Any) {
-        
+        print("login button pressed")
     }
 }
-
