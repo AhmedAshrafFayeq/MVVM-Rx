@@ -13,6 +13,7 @@ class LoginViewModel {
     let usernamePublishSibject = PublishSubject<String>()
     let passwordPublishSubject = PublishSubject<String>()
     
+    
     func isValid() -> Observable<Bool> {
         
         return Observable.combineLatest(
