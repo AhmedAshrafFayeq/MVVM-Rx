@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     private let viewModel   = LoginViewModel()
     private let disposeBag  = DisposeBag()
-    // manage memory and clear everthing up for me
+    // Manage memory and clear everthing up for me
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         // Bind UI visual elements with ViewModel
         usernameTextField.rx.text.map { $0 ?? "" }.bind(to: viewModel.usernamePublishSibject).disposed(by: disposeBag)
         passwordTextField.rx.text.map { $0 ?? "" }.bind(to: viewModel.passwordPublishSubject).disposed(by: disposeBag)
+        //map to non optional text
         
         viewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.isValid().map{ $0 ? 1 : 0.1 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)

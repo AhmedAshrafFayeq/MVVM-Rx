@@ -21,7 +21,7 @@ class LoginViewModel {
             passwordPublishSubject.asObservable().startWith("")
         ).map { username, password in
             return username.count > 3 && password.count > 3
-        }
+        }.startWith(false)
     }
-    
+    //we know it's gonna be empty when this first load
 }
