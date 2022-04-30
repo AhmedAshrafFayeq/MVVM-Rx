@@ -14,7 +14,11 @@ class LoginViewModel {
     let passwordPublishSubject = PublishSubject<String>()
     
     func isValid() -> Observable<Bool> {
-        return Observable.combineLatest(usernamePublishSibject.asObservable(), passwordPublishSubject.asObservable()).map { username, password in
+        
+        return Observable.combineLatest(
+            usernamePublishSibject.asObservable().startWith(""),
+            passwordPublishSubject.asObservable().startWith("")
+        ).map { username, password in
             return username.count > 3 && password.count > 3
         }
     }
