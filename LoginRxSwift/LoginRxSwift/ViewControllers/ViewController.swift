@@ -10,7 +10,11 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
-
+    
+    private let viewModel   = LoginViewModel()
+    private let disposeBag  = DisposeBag()
+    // manage memory and clear everthing up for me
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -18,6 +22,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextField.becomeFirstResponder()
+        
+        // Bind UI visual elements with ViewModel
+        usernameTextField.rx.text.map { $0 ?? "" }.bind(to: viewModel.usernamePublishSibject).disposed(by: disposeBag)
+        passwordTextField.rx.text.map { $0 ?? "" }.bind(to: viewModel.passwordPublishSubject).disposed(by: disposeBag)
+        
+        viewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.isValid().map{ $0 ? 1 : 0.1 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
     }
 
     @IBAction func didTapLoginButton(_ sender: Any) {
