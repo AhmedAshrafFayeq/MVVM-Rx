@@ -32,7 +32,12 @@ class ViewController: UIViewController {
         viewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.isValid().map{ $0 ? 1 : 0.1 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
     }
-
+    @IBAction func didTapRegiterButton(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
     @IBAction func didTapLoginButton(_ sender: Any) {
         print("login button pressed")
     }
