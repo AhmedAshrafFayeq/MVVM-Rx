@@ -16,6 +16,7 @@
 		2DCF5C0C281DC07600F186A1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF5C0B281DC07600F186A1 /* LoginViewModel.swift */; };
 		2DCF5C0E281EBEE500F186A1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF5C0D281EBEE500F186A1 /* RegistrationViewController.swift */; };
 		2DCF5C10281EBEEF00F186A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF5C0F281EBEEF00F186A1 /* HomeViewController.swift */; };
+		2DCF5C12281EC1AF00F186A1 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF5C11281EC1AF00F186A1 /* RegisterViewModel.swift */; };
 		B85A4D8F7AD6757DF420DAB8 /* Pods_LoginRxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3407CC9CD245C8DF55585E /* Pods_LoginRxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		2DCF5C0B281DC07600F186A1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2DCF5C0D281EBEE500F186A1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2DCF5C0F281EBEEF00F186A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2DCF5C11281EC1AF00F186A1 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		3F3407CC9CD245C8DF55585E /* Pods_LoginRxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginRxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		410AD05C283C46DFFD41EEAC /* Pods-LoginRxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginRxSwift.release.xcconfig"; path = "Target Support Files/Pods-LoginRxSwift/Pods-LoginRxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		49DC31C7130EC1D44A3D75AD /* Pods-LoginRxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginRxSwift.debug.xcconfig"; path = "Target Support Files/Pods-LoginRxSwift/Pods-LoginRxSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2DCF5C0B281DC07600F186A1 /* LoginViewModel.swift */,
+				2DCF5C11281EC1AF00F186A1 /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				2DCF5C0C281DC07600F186A1 /* LoginViewModel.swift in Sources */,
 				2DCF5BFA281DB60000F186A1 /* ViewController.swift in Sources */,
+				2DCF5C12281EC1AF00F186A1 /* RegisterViewModel.swift in Sources */,
 				2DCF5BF6281DB60000F186A1 /* AppDelegate.swift in Sources */,
 				2DCF5BF8281DB60000F186A1 /* SceneDelegate.swift in Sources */,
 				2DCF5C0E281EBEE500F186A1 /* RegistrationViewController.swift in Sources */,
