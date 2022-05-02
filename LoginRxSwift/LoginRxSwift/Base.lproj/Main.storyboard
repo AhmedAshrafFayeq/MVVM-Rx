@@ -220,6 +220,37 @@
             </objects>
             <point key="canvasLocation" x="399" y="119"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="gzs-3B-ske">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="gqr-BU-hBH" customClass="HomeViewController" customModule="LoginRxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jkh-nM-UCX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q7-RS-T6m">
+                                <rect key="frame" x="20" y="144" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hBK-XR-qff"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8q7-RS-T6m" firstAttribute="top" secondItem="hBK-XR-qff" secondAttribute="top" constant="100" id="Syh-6Y-46d"/>
+                            <constraint firstItem="hBK-XR-qff" firstAttribute="trailing" secondItem="8q7-RS-T6m" secondAttribute="trailing" constant="20" id="urr-0K-1pf"/>
+                            <constraint firstItem="8q7-RS-T6m" firstAttribute="leading" secondItem="hBK-XR-qff" secondAttribute="leading" constant="20" id="zEl-Lh-X9T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="8q7-RS-T6m" id="Zu9-Rf-9EH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXN-uA-57G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="119"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
