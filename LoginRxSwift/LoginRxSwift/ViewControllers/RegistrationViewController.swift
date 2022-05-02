@@ -10,8 +10,9 @@ import RxSwift
 
 class RegistrationViewController: UIViewController {
     
-    let viewModel   = RegisterViewModel()
-    let disposeBag  = DisposeBag()
+    let viewModel       = RegisterViewModel()
+    let disposeBag      = DisposeBag()
+    let userDefaults    = UserDefaults.standard
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -30,5 +31,13 @@ class RegistrationViewController: UIViewController {
     }
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let name =  firstName + " " + lastName
+        userDefaults.set(name, forKey: "name")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 }
+    

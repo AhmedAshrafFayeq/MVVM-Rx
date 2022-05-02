@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     private let viewModel   = LoginViewModel()
     private let disposeBag  = DisposeBag()
+    let userDefaults        = UserDefaults.standard
+
     // Manage memory and clear everthing up for me
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -40,5 +42,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapLoginButton(_ sender: Any) {
         print("login button pressed")
+        userDefaults.set(usernameTextField.text ?? "", forKey: "name")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
 }
