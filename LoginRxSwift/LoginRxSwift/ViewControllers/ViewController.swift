@@ -36,14 +36,14 @@ class ViewController: UIViewController {
     }
     @IBAction func didTapRegiterButton(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
-        UIApplication.shared.windows.first?.rootViewController = vc
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        UIApplication.shared.currentUIWindow()?.rootViewController = vc
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        UIApplication.shared.windows.first?.rootViewController = vc
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
-        usernameTextField.rx.text.map { $0 ?? "" }.map{"Welcome, \($0)"}.bind(to: vc.nameLabel.rx.text)        
+        UIApplication.shared.currentUIWindow()?.rootViewController = vc
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+        usernameTextField.rx.text.map { $0 ?? "" }.map{"Welcome, \($0)"}.bind(to: vc.nameLabel.rx.text)
     }
 }

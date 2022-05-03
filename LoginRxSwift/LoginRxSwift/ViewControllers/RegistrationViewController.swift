@@ -33,8 +33,8 @@ class RegistrationViewController: UIViewController {
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        UIApplication.shared.windows.first?.rootViewController = vc
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        UIApplication.shared.currentUIWindow()?.rootViewController = vc
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
         Observable.combineLatest(firstNameTextField.rx.text.map{ $0 ?? "" }, lastNameTextField.rx.text.map{ $0 ?? "" }){$0 + " " + $1}.map {
             "Welcome, \($0)"
         }.bind(to: vc.nameLabel.rx.text)
