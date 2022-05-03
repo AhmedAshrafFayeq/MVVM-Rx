@@ -16,6 +16,5 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
-        nameLabel.text = "Welcome \(userDefaults.string(forKey: "name") ?? "")"
     }
 }

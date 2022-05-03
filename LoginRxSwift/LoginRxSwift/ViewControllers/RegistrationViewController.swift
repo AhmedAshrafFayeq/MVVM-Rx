@@ -28,16 +28,16 @@ class RegistrationViewController: UIViewController {
         
         viewModel.isValid().bind(to: registerButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.isValid().map{ $0 ? 1 : 0.1 }.bind(to: registerButton.rx.alpha).disposed(by: disposeBag)
+    
     }
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
-        let firstName = firstNameTextField.text ?? ""
-        let lastName = lastNameTextField.text ?? ""
-        let name =  firstName + " " + lastName
-        userDefaults.set(name, forKey: "name")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         UIApplication.shared.windows.first?.rootViewController = vc
         UIApplication.shared.windows.first?.makeKeyAndVisible()
+        Observable.combineLatest(firstNameTextField.rx.text.map{ $0 ?? "" }, lastNameTextField.rx.text.map{ $0 ?? "" }){$0 + " " + $1}.map {
+            "Welcome, \($0)"
+        }.bind(to: vc.nameLabel.rx.text)
     }
 }
     
