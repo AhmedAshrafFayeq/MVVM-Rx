@@ -44,6 +44,6 @@ class ViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         UIApplication.shared.currentUIWindow()?.rootViewController = vc
         UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
-        usernameTextField.rx.text.map { $0 ?? "" }.map{"Welcome, \($0)"}.bind(to: vc.nameLabel.rx.text)
+        usernameTextField.rx.text.map { $0 ?? "" }.map{"Welcome, \($0)"}.bind(to: vc.nameLabel.rx.text).disposed(by: disposeBag)
     }
 }

@@ -37,7 +37,7 @@ class RegistrationViewController: UIViewController {
         UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
         Observable.combineLatest(firstNameTextField.rx.text.map{ $0 ?? "" }, lastNameTextField.rx.text.map{ $0 ?? "" }){$0 + " " + $1}.map {
             "Welcome, \($0)"
-        }.bind(to: vc.nameLabel.rx.text)
+        }.bind(to: vc.nameLabel.rx.text).disposed(by: disposeBag)
     }
 }
     
