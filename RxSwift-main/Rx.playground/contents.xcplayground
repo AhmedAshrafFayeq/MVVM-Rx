@@ -4,5 +4,7 @@
         <page name='Observables'/>
         <page name='Observables - Challenge'/>
         <page name='PublishSubject'/>
+        <page name='BehaviourSubject'/>
+        <page name='ReplaySubject'/>
     </pages>
 </playground>
