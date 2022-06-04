@@ -5,9 +5,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 /*
     1- similar to BehaviorSubject listen before supscription but in buffer size
-    2- recieve anything after subscription but just with number of buffer size before subscription. 
+    2- recieve anything after subscription but just with number of buffer size before subscription.
  */
-
+let disposeBag = DisposeBag()
 let accountSubject = ReplaySubject<Double>.create(bufferSize: 3)
 
 accountSubject.onNext(124.226) // will not listened
@@ -18,7 +18,7 @@ accountSubject.onNext(424.226)
 
 let accountManager = accountSubject.subscribe(onNext: {
     print("Account Manager: Transaction Amount: $\($0)")
-})
+}).disposed(by: disposeBag)
 
 accountSubject.onNext(20.98)
 accountSubject.onNext(15.3773)
@@ -30,4 +30,4 @@ print("\n")
 
 let anotherSubscription = accountSubject.subscribe(onNext: {
     print("Another Subscription: Transaction Amount: $\($0)")
-})
+}).disposed(by: disposeBag)

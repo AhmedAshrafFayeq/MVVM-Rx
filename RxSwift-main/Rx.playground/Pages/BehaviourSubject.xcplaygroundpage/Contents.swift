@@ -7,17 +7,17 @@ PlaygroundPage.current.needsIndefiniteExecution = true
     2- get most recent value (any other subscription)
     3- focus on getting anything after subscription
 */
-
+let disposeBag = DisposeBag()
 let behaviorSubject = BehaviorSubject(value: "Value A")
 
 let subscriptionOne = behaviorSubject.subscribe(onNext: {
     print("Subscription 1: \($0)")
-})
+}).disposed(by: disposeBag)
 
 behaviorSubject.onNext("Value B")
 
 let subscriptionTwo = behaviorSubject.subscribe(onNext: {
     print("Subscription 2: \($0)")
-})
+}).disposed(by: disposeBag)
 
 behaviorSubject.onNext("both Subscription")
