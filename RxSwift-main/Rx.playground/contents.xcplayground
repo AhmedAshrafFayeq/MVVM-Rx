@@ -3,5 +3,6 @@
     <pages>
         <page name='Observables'/>
         <page name='Observables - Challenge'/>
+        <page name='PublishSubject'/>
     </pages>
 </playground>

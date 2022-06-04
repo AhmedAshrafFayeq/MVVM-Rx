@@ -9,3 +9,18 @@ let numberSupscription: () = numberSequence.subscribe (onNext: {
     let number = $0 * 5
     print(number)
 }).disposed(by: disposeBag)
+
+
+
+let array = ["ahmed", "ashraf", "fayeq"]
+let arraySequenceObservable = Observable.from(array)
+let _ = arraySequenceObservable.subscribe { event in
+    switch event {
+    case .next(let element):
+        print(element.uppercased())
+    case .error(let error):
+        print(error.localizedDescription)
+    case .completed:
+        print("done")
+    }
+}.disposed(by: disposeBag)
