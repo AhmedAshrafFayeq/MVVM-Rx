@@ -9,6 +9,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 */
 let disposeBag = DisposeBag()
 let behaviorSubject = BehaviorSubject(value: "Value A")
+behaviorSubject.onNext("Value C")
+behaviorSubject.onNext("Value D")
+behaviorSubject.onNext("Value E") //most recent before subscribtion
 
 let subscriptionOne = behaviorSubject.subscribe(onNext: {
     print("Subscription 1: \($0)")
