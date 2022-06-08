@@ -16,7 +16,7 @@ accountSubject.onNext(324.226)
 accountSubject.onNext(424.226)
 
 
-let accountManager = accountSubject.subscribe(onNext: {
+let accountManager: () = accountSubject.subscribe(onNext: {
     print("Account Manager: Transaction Amount: $\($0)")
 }).disposed(by: disposeBag)
 
@@ -28,6 +28,6 @@ accountSubject.onNext(5662.52)
 
 print("\n")
 
-let anotherSubscription = accountSubject.subscribe(onNext: {
+let anotherSubscription: () = accountSubject.subscribe(onNext: {
     print("Another Subscription: Transaction Amount: $\($0)")
 }).disposed(by: disposeBag)
